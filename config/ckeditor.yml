@@ -1,0 +1,117 @@
+# CKEditor configuration
+
+allowedContent: true
+bodyClass: "wiki"
+removePlugins: "div,flash,forms,iframe"
+forcePasteAsPlainText: false
+
+# HTML sanitizer configuration
+
+allowedProtocols:
+  - afs
+  - aim
+  - callto
+  - ed2k
+  - feed
+  - ftp
+  - gopher
+  - http
+  - https
+  - irc
+  - mailto
+  - news
+  - nntp
+  - rsync
+  - rtsp
+  - sftp
+  - ssh
+  - tag
+  - telnet
+  - urn
+  - webcal
+  - xmpp
+
+allowedTags:
+  - a
+  - abbr
+  - acronym
+  - address
+  - b
+  - big
+  - blockquote
+  - br
+  - caption
+  - cite
+  - code
+  - dd
+  - del
+  - dfn
+  - div
+  - dt
+  - em
+  - h1
+  - h2
+  - h3
+  - h4
+  - h5
+  - h6
+  - hr
+  - i
+  - iframe
+  - img
+  - ins
+  - kbd
+  - li
+  - ol
+  - p
+  - pre
+  - s
+  - samp
+  - small
+  - span
+  - strike
+  - strong
+  - sub
+  - sup
+  - table
+  - tbody
+  - td
+  - tfoot
+  - th
+  - thead
+  - tr
+  - tt
+  - u
+  - ul
+  - var
+  - video
+
+allowedAttributes:
+  - abbr
+  - align
+  - alt
+  - autoplay
+  - border
+  - cellpadding
+  - cellspacing
+  - cite
+  - class
+  - colspan
+  - controls
+  - datetime
+  - data-responsive
+  - dir
+  - height
+  - href
+  - loop
+  - name
+  - nowrap
+  - reversed
+  - rowspan
+  - src
+  - start
+  - style
+  - title
+  - valign
+  - width
+  - xml:lang

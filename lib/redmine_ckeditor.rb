@@ -21,7 +21,7 @@ module RedmineCkeditor
       @allowed_tags ||= ckeditor_config[:allowedTags] || %w[
         a abbr acronym address blockquote b big br caption cite code dd del dfn
         div dt em h1 h2 h3 h4 h5 h6 hr i img ins kbd li ol p pre samp small span
-        strike s strong sub sup table tbody td tfoot th thead tr tt u ul var iframe
+        strike s strong sub sup table tbody td tfoot th thead tr tt u ul var iframe video
       ]
     end
 
@@ -29,7 +29,7 @@ module RedmineCkeditor
       @allowed_attributes ||= ckeditor_config[:allowedAttributes] || %w[
         href src width height alt cite datetime title class name xml:lang abbr dir
         style align valign border cellpadding cellspacing colspan rowspan nowrap
-        start reversed
+        start reversed autoplay controls loop data-responsive
       ]
     end
 
@@ -98,11 +98,13 @@ module RedmineCkeditor
       skin += ",#{assets_root}/ckeditor-contrib/skins/#{skin}/" if skin != "moono-lisa"
 
       rich_options = Rich.options({
-        :contentsCss => [stylesheet_path("application"), "#{assets_root}/stylesheets/editor.css"],
+        :contentsCss => [stylesheet_path("application"), "#{assets_root}/stylesheets/rich/editor.css"],
         :scoped => scope_object ? true : false,
         :allow_document_uploads => true,
-        :allow_embeds => true,
+        :alpha => false,
+        :allowed_styles => [:original],
         :default_style => :original,
+        :insert_many => false,
         :richBrowserUrl => "#{Redmine::Utils.relative_url_root}/rich/files/"
       }, scope_type, scope_id)
       rich_options.delete(:removeDialogTabs)

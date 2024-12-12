@@ -1,25 +1,22 @@
-/*	
-	This file defines the default set of CSS styles available in the Rich editor
-*/
-
-
-p.caption {
-	font-style: italic;
-	color: grey;
+/*
+ * For CKEditor autocomplete panel 
+ */
+ul.cke_autocomplete_panel {
+	width: 250px;
 }
 
-span.highlight {
-	background: yellow;
+ul.cke_autocomplete_panel .photo {
+	display: inline-block;
+	vertical-align: middle;
+	height: 30px;
+	border-radius: 50%;
 }
 
-img.left {
-	float: left;
+.cke_autocomplete_panel .username {
+	padding-left: 5px;
 }
 
-img.right {
-	float: right;
-}
-
-html, body {
-  height: 100%;
+.cke_autocomplete_panel .fullname {
+	padding-left: 5px;
+	color: #b7b7b7;
 }

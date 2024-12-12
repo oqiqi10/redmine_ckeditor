@@ -11,11 +11,21 @@ module RedmineCkeditor
       javascript_tag(<<-EOT)
         #{plugin_script}
 
+        var element = document.createElement('div');
+        function decodeEntities(html) {
+          html = html.replace(\/\<br\\/?\>\/g, '\\n');
+          element.innerHTML = html;
+          html = element.textContent;
+          element.textContent = '';
+          return html;
+        }
+
         CKEDITOR.on("instanceReady", function(event) {
           var editor = event.editor;
-          var textarea = document.getElementById(editor.name);
+          var textarea = document.getElementById(editor.name);          
           editor.on("change", function() {
-            textarea.value = editor.getSnapshot();
+            var value = editor.getSnapshot();
+            textarea.value = decodeEntities(value);
           });
         });
 
